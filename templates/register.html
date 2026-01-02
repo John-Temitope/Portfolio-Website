@@ -1,0 +1,58 @@
+{% from "bootstrap5/form.html" import render_form %}
+{% block content %}
+{% include "header.html" %}
+
+<header class="masthead low_contrast py-5"
+        style="background-image: url('{{ url_for('static', filename='assets/image/background_images/register_bg.jpg') }}')"
+>
+  <div class="container px-3 col-lg col-sm">
+    <div class="container px-3">
+      <div class="row align-items-center mt-5 mb-0">
+        <div class="col-3">
+          <div class="w-100 p-3">
+            <img class="img-fluid rounded-circle"
+                 src="{{ url_for('static', filename='assets/image/John pp pic.jpeg') }}"
+                 alt="Profile picture"
+            >
+          </div>
+        </div>
+        <div class="col-9 col-lg-9 col-sm-9">
+          <div class="p-3 w-100">
+            <div class="site-heading text-center">
+              <h1>Register</h1>
+              <span class="subheading text-light">One Time Registration as the Admin</span>
+              {% with messages = get_flashed_messages() %}
+              {% if messages %}
+                {% for message in messages %}
+                  <p class=flash>{{ message }}</p>
+                {% endfor %}
+              {% endif %}
+              {% endwith %}
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</header>
+
+<!-- Main Content-->
+<section class="py-5 border-bottom">
+  <main class="mb-4">
+  <div class="container px-4 px-lg-5">
+    <div class="row gx-4 gx-lg-5 justify-content-center">
+      <div class="col-md-10 col-lg-8 col-xl-7 fs-5">
+        <div class="my-5">
+          <div class="form-floating">
+            {{ render_form(form, novalidate=True, button_map={"submit": "secondary"}) }}
+
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</main>
+</section>
+
+{% include "footer.html" %}
+{% endblock %}

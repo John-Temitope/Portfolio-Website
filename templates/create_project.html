@@ -1,0 +1,58 @@
+{% from "bootstrap5/form.html" import render_form %}
+{% block content %}
+{% include "header.html" %}
+
+<!-- Page Header-->
+<header class="masthead low_contrast py-5"
+        style="background-image: url('{{ url_for('static', filename='assets/image/background_images/create_bg.jpg') }}')"
+>
+  <div class="container px-3">
+    <div class="container px-3">
+      <div class="row align-items-center mt-5 mb-0">
+        <div class="col-3">
+          <div class="w-100 p-3">
+            <img class="img-fluid rounded-circle"
+                 src="{{ url_for('static', filename='assets/image/John pp pic.jpeg') }}"
+                 alt="Profile picture"
+            >
+          </div>
+        </div>
+        <div class="col-lg-9">
+          <div class="p-3 w-100">
+            <div class="site-heading text-center">
+              {% if is_edit %}
+                <h1>Edit Project</h1>
+              {% else: %}
+                <h1>Log a New Project</h1>
+              {% endif %}
+                <span class="subheading text-light">Document and showcase your work or idea.</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</header>
+
+<section class="py-5 border-bottom">
+  <main class="mb-4">
+  <div class="container px-4 px-lg-5">
+    <div class="row gx-4 gx-lg-5 justify-content-center">
+      <div class="col-md-10 col-lg-8 col-xl-7 fs-5">
+        <p>Post that beautiful project you made!</p>
+        <div class="my-5">
+          <div class="form-floating">
+            <!-- <script src="https://cdn.ckeditor.com/4.25.1-lts/standard/ckeditor.js"></script> -->
+            {{ ckeditor.load() }} {{ ckeditor.config(name='body') }}
+            {{ render_form(form, novalidate=True, button_map={"submit": "secondary"}) }}
+
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</main>
+</section>
+
+{% include "footer.html" %}
+{% endblock %}
