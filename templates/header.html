@@ -91,7 +91,7 @@
                 >About</a>
               </li>
 
-              <!-- TODO: Only show Admin buttons if user is logged in. Otherwise show "Log Out" -->
+              <!-- Only show Admin buttons if user is logged in. Otherwise show "Log Out" -->
               {% if logged_in %}
               <li class="nav-item">
                 <a class="nav-link px-lg-3 py-3 py-lg-4 {% if request.endpoint == 'create_project' %}active{% endif %}"
