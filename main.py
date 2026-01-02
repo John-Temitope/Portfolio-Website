@@ -12,7 +12,6 @@ from send_mail import Email
 from flask_ckeditor import CKEditor
 from flask_login import LoginManager, UserMixin, login_user, logout_user, login_required, current_user
 from functools import wraps
-import secrets
 import os
 
 
