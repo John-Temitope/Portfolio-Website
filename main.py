@@ -13,11 +13,14 @@ from flask_ckeditor import CKEditor
 from flask_login import LoginManager, UserMixin, login_user, logout_user, login_required, current_user
 from functools import wraps
 import os
+from dotenv import load_dotenv
 
 
 app = Flask(__name__)
 app.config['SECRET_KEY'] = os.environ.get('FLASK_KEY')
 Bootstrap5(app)
+
+load_dotenv()
 
 # Authenticating/protecting the routes
 login_manager = LoginManager()
