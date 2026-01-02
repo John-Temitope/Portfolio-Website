@@ -13,10 +13,11 @@ from flask_ckeditor import CKEditor
 from flask_login import LoginManager, UserMixin, login_user, logout_user, login_required, current_user
 from functools import wraps
 import secrets
+import os
 
 
 app = Flask(__name__)
-app.config['SECRET_KEY'] = secrets.token_hex()
+app.config['SECRET_KEY'] = os.environ.get('FLASK_KEY')
 Bootstrap5(app)
 
 # Authenticating/protecting the routes
@@ -48,7 +49,7 @@ ckeditor = CKEditor(app)
 class Base(DeclarativeBase):
     pass
 
-app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///project_posts.db'
+app.config['SQLALCHEMY_DATABASE_URI'] = os.environ.get("DB_URI", "sqlite:///project_posts.db")
 db = SQLAlchemy(model_class=Base)
 db.init_app(app)
 
@@ -332,4 +333,4 @@ def test():
     return render_template("test.html")
 
 if __name__ == "__main__":
-    app.run(debug=True, port=5003)
+    app.run(debug=False)
