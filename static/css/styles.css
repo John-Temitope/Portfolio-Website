@@ -10824,6 +10824,7 @@ textarea.form-control-lg {
     display: none !important;
   }
 }
+
 .feature {
   display: inline-flex;
   align-items: center;
@@ -10897,7 +10898,7 @@ header.masthead .site-heading {
 /* Main heading */
 /* Default size on mobile screens */
 header.masthead .site-heading h1 {
-  font-size: 2.2rem;
+  font-size: 2.0rem;
   font-weight: 700;
   line-height: 1.4;
   font-family: "Open Sans", "Segoe UI", sans-serif;
