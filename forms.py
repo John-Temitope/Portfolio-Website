@@ -31,7 +31,7 @@ class LoginForm(FlaskForm):
 class CreateProjectPost(FlaskForm):
     title = StringField(label="Project Title", validators=[DataRequired()])
     subtitle = StringField(label="Subtitle", validators=[DataRequired()])
-    img_url = StringField(label="Project URL", validators=[DataRequired(), URL()])
+    img_url = StringField(label="Image URL", validators=[DataRequired(), URL()])
     body = CKEditorField(label="Project Content", validators=[DataRequired()])
     submit = SubmitField("Submit Post")
 

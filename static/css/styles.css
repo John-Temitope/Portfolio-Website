@@ -11173,6 +11173,15 @@ body {
     flex: 1;               /* text takes remaining space */
 }
 
+.post-text a {
+    color: #222;          /* #222 / #111 for softer black */
+    text-decoration: none;
+}
+
+.post-text a:hover {
+    color: #2563eb;         /* subtle hover feedback */
+}
+
 .post-image img {
     max-width: 150px;
     height: auto;
@@ -11198,7 +11207,6 @@ body {
 @media (max-width: 768px) {
     .project-img {
         height: 200px;   /* smaller height on mobile */
-
     }
 }
 
