@@ -11182,6 +11182,11 @@ body {
     color: #2563eb;         /* subtle hover feedback */
 }
 
+.post-subtitle {
+    font-size: 1.15rem;   /* ~16.8px */
+    margin-top: 0.25rem;
+}
+
 .post-image img {
     max-width: 150px;
     height: auto;
