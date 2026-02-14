@@ -39,14 +39,26 @@
   <div class="container px-4 px-lg-5">
     <div class="row gx-4 gx-lg-5 justify-content-center">
       <div class="col-md-10 col-lg-8 col-xl-7 fs-5">
-        <p>Post that beautiful project you made!</p>
+        {% if is_edit %}
+          <h4>Current Images</h4>
+          {% for image in project.images %}
+            <img src="{{ url_for('static', filename='uploads/' + image.image_file) }}" width="150">
+              <p>{{ image.image_description }}</p>
+          {% endfor %}
+        {% else %}
+          <p>Post that beautiful project you made!</p>
+        {% endif %}
+
         <div class="my-5">
           <div class="form-floating">
-            <!-- <script src="https://cdn.ckeditor.com/4.25.1-lts/standard/ckeditor.js"></script> -->
-            {{ ckeditor.load() }} {{ ckeditor.config(name='body') }}
-            {{ render_form(form, novalidate=True, button_map={"submit": "secondary"}) }}
-
+            <form method="POST" enctype="multipart/form-data"> <!-- enabling FileField input -->
+              <!-- <script src="https://cdn.ckeditor.com/4.25.1-lts/standard/ckeditor.js"></script> -->
+              {{ form.hidden_tag() }}
+              {{ ckeditor.load() }} {{ ckeditor.config(name='body') }}
+              {{ render_form(form, novalidate=True, button_map={"submit": "secondary"}) }}
+            </form>
           </div>
+
         </div>
       </div>
     </div>

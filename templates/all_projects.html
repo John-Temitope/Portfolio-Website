@@ -54,7 +54,8 @@
           <a href="{{ url_for('show_project', project_id=project.id) }}">
             <h3 class="post-title">{{ project.title }}</h3>
             <p class="post-subtitle">{{ project.subtitle }}</p>
-        </a>
+          </a>
+          <p class="post-date">{{ project.formatted_date }}</p>
         </div>
         <!-- Delete a project -->
         {% if logged_in and current_user.id == 1 %}

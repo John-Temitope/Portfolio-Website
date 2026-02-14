@@ -21,6 +21,7 @@
             <div class="site-heading text-center">
               <h1>{{ project.title }}</h1>
               <span class="subheading text-light">{{ project.subtitle }}</span>
+              <em><p class="small text-light text-opacity-50">Posted on {{ project.formatted_date }}</p></em>
             </div>
           </div>
         </div>
@@ -41,6 +42,22 @@
         </div>
         <div class="mt-5">
           {{ project.body|safe }}
+          <div>
+          {% if project.images %}
+            <div class="image-gallery">
+              {% for image in project.images %}
+              <div class="image-card">
+                <div class="image-wrapper">
+                  <img src="{{ url_for('static', filename='uploads/' + image.image_file) }}">
+                </div>
+                {% if image.image_description %}
+                  <p class="image-description">{{ image.image_description }}</p>
+                {% endif%}
+              </div>
+                {% endfor %}
+            </div>
+          {% endif %}
+          </div>
         </div>
 
 
