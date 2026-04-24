@@ -10898,7 +10898,7 @@ header.masthead .site-heading {
 /* Main heading */
 /* Default size on mobile screens */
 header.masthead .site-heading h1 {
-  font-size: 1.5rem;
+  font-size: 1.5rem;           /* Default size on small screens */
   font-weight: 700;
   line-height: 1.4;
   font-family: "Open Sans", "Segoe UI", sans-serif;
