@@ -11068,7 +11068,7 @@ header.masthead .site-heading .subheading {
 
 .iframe-container {
   position: relative;
-  padding-bottom: 5px; /* space for footer */
+  padding-bottom: 3px; /* space for footer */
 }
 
 .iframe-container iframe {
@@ -11288,5 +11288,18 @@ body {
     header.masthead {
         padding-top: 1rem !important;
         padding-bottom: 1rem !important;
+    }
+
+    /* Prevent subtitle from wrapping */
+    header.masthead .site-heading .subheading {
+        font-size: 0.75rem !important;
+        white-space: nowrap !important;
+        overflow: hidden;
+        text-overflow: ellipsis;
+    }
+
+    /* tighten the heading column padding */
+    header.masthead .col-8 .p-3 {
+        padding: 0.5rem !important;
     }
 }

@@ -19,7 +19,7 @@
             <div class="p-3 w-100">
               <div class="site-heading">
                 <h1>Adeniran John</h1>
-                  <span class="subheading text-light">Python Developer | Data Analyst</span>
+                  <span class="subheading text-light">Python Developer | Data Scientist</span>
               </div>
             </div>
           </div>
@@ -29,8 +29,8 @@
   </header>
 
   <!-- Features section-->
-  <section class="py-5 border-bottom" id="features">
-    <div class="container py-3 px-2">
+  <section class="py-4 border-bottom" id="features">
+    <div class="container py-3 px-3">
       <div class="text-center mb-3">
         <h2 class="display-8 fw-bold ">Core Technical Tools</h2>
         <p class="lead mb-5">Clean, smart and scalable tech</p>
@@ -48,7 +48,7 @@
             Python
             </span>
             {% for badge in python_badges %}
-            <span class="badge rounded-pill {{ badge.class }} mb-3 d-grid gap3 row-gap-3">{{ badge.label}}</span>
+            <span class="badge rounded-pill {{ badge.class }} mb-3 d-grid gap3 row-gap-3">{{ badge.label }}</span>
             {% endfor %}
           </div>
         </div>
@@ -64,7 +64,7 @@
             Power BI
             </span>
             {% for badge in pbi_badges %}
-            <span class="badge rounded-pill {{ badge.class }} mb-3 d-grid gap3 row-gap-3">{{ badge.label}}</span>
+            <span class="badge rounded-pill {{ badge.class }} mb-3 d-grid gap3 row-gap-3">{{ badge.label }}</span>
             {% endfor %}
           </div>
         </div>
@@ -80,16 +80,17 @@
             MySQL
             </span>
               {% for badge in sql_badges %}
-            <span class="badge rounded-pill {{ badge.class }} mb-3 d-grid gap3 row-gap-3">{{ badge.label}}</span>
+            <span class="badge rounded-pill {{ badge.class }} mb-3 d-grid gap3 row-gap-3">{{ badge.label }}</span>
             {% endfor %}
           </div>
         </div>
       </div>
     </div>
   </section>
-  <!-- Projects section-->              <!-- I want to randomize the display of the projects instead of ordered-->
-  <section class="bg-light py-5 border-bottom">
-    <div class="container px-5 my-5">
+
+  <!-- Projects section-->              <!-- Randomized the display of the projects instead of an order of display -->
+  <section class="bg-light py-4 border-bottom">
+    <div class="container py-2 px-5">
       <div class="text-center mb-5">
         <h2 class="fw-bolder">Python Projects Library</h2>
         <p class="lead mb-0">Practical implementations of Python concepts including data structures, APIs, and web apps.</p>
@@ -113,10 +114,10 @@
         </div>
         {% endfor %}
       </div>
-      <p class="pt-3 mt-5 text-end"><a href="{{ url_for('projects') }}" class="btn btn-dark">View all</a></p>
+      <p class="pt-3 mt-3 text-end"><a href="{{ url_for('projects') }}" class="btn btn-dark">View all</a></p>
 
       {% if logged_in and current_user.id == 1 %}
-        <p class="pt-3 mt-5 text-end"><a href="{{ url_for('create_project') }}" class="btn btn-dark">Create New Project</a></p>
+        <p class="pt-3 mt-3 text-end"><a href="{{ url_for('create_project') }}" class="btn btn-dark">Create New Project</a></p>
       {% endif %}
 
     </div>

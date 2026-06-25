@@ -129,7 +129,7 @@ badge_classes = [
     ]
 
 python_labels = [
-        "Data Analysis/Science: Pandas, NumPy, Scikit-Learn, SciPy",
+        "Data Science: Pandas, NumPy, Sk-Learn, SciPy, Tensorflow, Azure ML",
         "Web Scraping: Selenium, Beautiful Soup",
         "Web Development: Flask & Jinja",
         "Databases: SQLite, SQLAlchemy, PostgreSQL",
@@ -440,4 +440,4 @@ def logout():
 
 
 if __name__ == "__main__":
-    app.run(debug=False)
+    app.run(debug=True)
