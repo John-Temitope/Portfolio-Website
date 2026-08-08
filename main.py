@@ -20,7 +20,7 @@ from typing import List
 import uuid
 
 
-app = Flask(__name__)
+app = Flask(__name__, instance_path='/tmp')
 app.config['SECRET_KEY'] = os.environ.get('FLASK_KEY')
 Bootstrap5(app)
 
@@ -457,6 +457,7 @@ def health_check():
         return {"status": "ok"}, 200
     except Exception as e:
         return {"status": "error", "details": str(e)}, 500
+
 
 
 
