@@ -31,4 +31,3 @@ truststore==0.10.4
 urllib3_secure_extra==0.1.0
 Werkzeug==3.1.8
 WTForms==3.2.2
-xmlrpclib==1.0.1
