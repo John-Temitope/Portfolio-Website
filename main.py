@@ -439,5 +439,28 @@ def logout():
     return redirect(url_for('home'))
 
 
+##-----------KEEPING SUPABASE FROM INACTIVITY--------##
+from supabase import create_client, Client
+
+# Initialise Supabase client
+SUPABASE_URL = os.environ.get("SUPABASE_URL")
+SUPABASE_KEY = os.environ.get("SUPABASE_KEY")
+
+supabase: Client = create_client(SUPABASE_URL, SUPABASE_KEY)
+
+@app.route("/health")
+@admin_access
+def health_check():
+    try:
+        # Run a lightweight query
+        result = supabase.table("project_posts").select("id").limit(1).execute()
+        return {"status": "ok"}, 200
+    except Exception as e:
+        return {"status": "error", "details": str(e)}, 500
+
+
+
+
+
 if __name__ == "__main__":
     app.run(debug=False)
